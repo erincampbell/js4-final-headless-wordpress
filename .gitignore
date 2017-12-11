@@ -1,0 +1,4 @@
+node_modules
+npm-debug.log
+wordpress/wp-content/languages/
+.DS_Store

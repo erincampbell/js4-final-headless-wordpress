@@ -1,0 +1,45 @@
+{
+    "name": "frontend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "node server.js",
+        "build": "next build",
+        "start": "next start",
+        "docker:build": "docker build -t frontend .",
+        "docker:clean": "docker rm -f frontend || true",
+        "docker:run": "docker run -p 3000:3000 --name frontend frontend",
+        "docker:stop": "docker stop frontend",
+        "docker:start": "docker start frontend && yarn run docker:logs",
+        "docker:logs": "docker logs -f frontend",
+        "deploy":
+            "yarn run docker:build && yarn run docker:clean && yarn run docker:run"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.16.2",
+        "isomorphic-unfetch": "^2.0.0",
+        "next": "^3.2.2",
+        "react": "^15.6.1",
+        "react-dom": "^15.6.1",
+        "@domain-group/fe-brary": "^19.1.3",
+        "@domain-group/fe-helper": "^5.0.1",
+        "@domain-group/fe-co-demo": "^3.5.0",
+        "@domain-group/fe-co-allhomes-header": "^8.1.6",
+        "@domain-group/fe-co-allhomes-footer": "^3.0.3",
+        "prop-types": "^15.5.10",
+        "yarn-bin-fix": "^0.1.15"
+    },
+    "devDependencies": {
+      "@domain-group/eslint-config-domain": "^4.0.1",
+      "@domain-group/fe-build": "^12.7.0",
+      "@domain-group/nyc-config-domain": "1.0.0",
+      "@domain-group/remark-preset-domain": "^2.0.0",
+      "depd": "^1.1.0",
+      "flow-result-checker": "^0.1.1",
+      "in-publish": "^2.0.0"
+    }
+}
