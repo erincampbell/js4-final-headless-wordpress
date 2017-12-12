@@ -1,7 +1,7 @@
 import Layout from "./components/Layout.js";
 import AllhomesHeader from '@domain-group/fe-co-allhomes-header';
 //import allhomesFooter from '@domain-group/fe-co-allhomes-footer';
-import React, { Component } from "react";
+import React from "react";
 import { themeVariables } from '@domain-group/fe-brary';
 import { themeRoot }  from '@domain-group/fe-co-theme';
 import fetch from "isomorphic-unfetch";
@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Config } from "../../../config.js";
 
 
-class AllhomesNews extends Component {
+class AllhomesNews extends React.Component {
     static async getInitialProps(context) {
         const pageRes = await fetch(
             `${Config.apiUrl}/wp-json/postlight/v1/page?slug=welcome`
@@ -307,6 +307,6 @@ class AllhomesNews extends Component {
     }
 }
 
-export const BaseNews = AllhomesNews;
-export default AllhomesNews;
+export const BaseAllhomesNews = AllhomesNews;
+export default themeRoot(AllhomesNews, 'domain');
 //export default themeRoot(AllhomesNews, 'domain');
