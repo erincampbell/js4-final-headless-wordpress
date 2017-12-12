@@ -1,9 +1,9 @@
-import Layout from "../components/Layout.js";
+import Layout from "./Layout.js";
 import React, { Component } from "react";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 import Error from "next/error";
-import { Config } from "../config.js";
+import { Config } from "../../../../config.js";
 
 class Category extends Component {
     static async getInitialProps(context) {
