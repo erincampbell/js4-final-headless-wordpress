@@ -1,4 +1,6 @@
-import Layout from "./src/js/components/Layout.js";
+import React from 'react';
+// import PropTypes from 'prop-types';
+// import Layout from './src/js/components/Layout.js';
 import AllhomesHeader from '@domain-group/fe-co-allhomes-header';
 //import allhomesFooter from '@domain-group/fe-co-allhomes-footer';
 import React from "react";
@@ -94,7 +96,7 @@ class AllhomesNews extends React.Component {
                 </ul>
             );
         }); */
-      
+
         return (
             <Layout>
               <header className="App-header">
@@ -109,8 +111,8 @@ class AllhomesNews extends React.Component {
             </Layout>
         );
     }
+
 }
 
 export const BaseAllhomesNews = AllhomesNews;
-export default themeRoot(AllhomesNews, 'allhomes');
-//export default themeRoot(AllhomesNews, 'domain');
+export default themeRoot(AllhomesNews, 'domain');
