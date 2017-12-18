@@ -7,6 +7,7 @@ class Article extends React.Component {
 
   render() {
     const listTerms = typeof this.props.tags === 'string' ? this.props.tags : this.props.tags.map(tag => tag.name);
+    console.log('hi'+this.props.title);
     return (
       <article key={this.props.id}>
         <div className="thumb"><img src={this.props.image} /></div>

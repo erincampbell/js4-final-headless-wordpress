@@ -1,9 +1,8 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-// import Layout from './src/js/components/Layout.js';
+import Layout from './src/js/components/Layout.js';
 import AllhomesHeader from '@domain-group/fe-co-allhomes-header';
 //import allhomesFooter from '@domain-group/fe-co-allhomes-footer';
-import React from "react";
 import { themeVariables } from '@domain-group/fe-brary';
 import { themeRoot }  from '@domain-group/fe-co-theme';
 import fetch from "isomorphic-unfetch";
@@ -11,8 +10,8 @@ import Link from "next/link";
 import { Config } from "../config.js";
 import Article from './src/js/components/article';
 import { getFeed, handleFeed } from './src/js/components/newsFeed';
-import { navItems } from './src/js/components/nav-items'
-//import './App.css';
+import { navItems } from './src/js/components/nav-items';
+//import 'https://renderizr-assets.domainstatic.com.au/@domain-group/fe-co-allhomes-header/@domain-group_fe-co-allhomes-header_8.1.6_3.0.1_client-allhomes.css';
 
 
 class AllhomesNews extends React.Component {
@@ -26,7 +25,7 @@ class AllhomesNews extends React.Component {
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.compileArticles();
   }
 
@@ -40,7 +39,7 @@ class AllhomesNews extends React.Component {
           setTimeout(resolve, 1000, handleFeed(results))
           this.setState({
             loadingFeed: false,
-            articleList: results,
+            articleList: handleFeed(results),
             fullList: results,
           })
           console.log(results);
@@ -49,6 +48,8 @@ class AllhomesNews extends React.Component {
     });
 
   }
+
+
 
     static async getInitialProps(context) {
         const pageRes = await fetch(
@@ -67,7 +68,6 @@ class AllhomesNews extends React.Component {
     }
 
 
-    render() {
     /*    const posts = this.props.posts.map((post, index) => {
             return (
                 <ul key={index}>
@@ -97,21 +97,23 @@ class AllhomesNews extends React.Component {
             );
         }); */
 
-        return (
-            <Layout>
-              <header className="App-header">
-                <h1 className="App-title">Allhomes</h1>
-              </header>
-              <div className="content">
-                {console.log(this.state.articleList)}
-                <Article {...this.state.articleList} />
-              </div>
-              <AllhomesHeader {...navItems()} />
+        render() {
+          return (
+              <Layout>
+                <AllhomesHeader {...navItems()} />
+                <header className="App-header">
+                  <h1 className="App-title">Allhomes</h1>
+                </header>
+                <div className="content">
+                  {this.state.articleList.map(article => {
+                    return <Article {...article} />
+                  })}
 
-            </Layout>
-        );
-    }
+                </div>
 
+              </Layout>
+          );
+        }
 }
 
 export const BaseAllhomesNews = AllhomesNews;

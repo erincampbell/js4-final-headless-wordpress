@@ -1,6 +1,6 @@
 export const getFeed = () => {
   return (
-    fetch('https://stage.domain.com.au/news/wp-json/posts?filter%5Bcat%5D=1340')
+    fetch('https://www.domain.com.au/news/wp-json/posts?filter%5Bcat%5D=1340')
     .then(response => response.json())
     .then(data => data)
   );
