@@ -1,4 +1,4 @@
-import Layout from "./Layout.js";
+import Layout from "./layout.js";
 import React, { Component } from "react";
 import fetch from "isomorphic-unfetch";
 import Error from "next/error";

@@ -1,8 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import Layout from './src/js/components/Layout.js';
-import AllhomesHeader from '@domain-group/fe-co-allhomes-header';
-//import allhomesFooter from '@domain-group/fe-co-allhomes-footer';
+import Layout from './src/js/components/layout';
 import { themeVariables } from '@domain-group/fe-brary';
 import { themeRoot }  from '@domain-group/fe-co-theme';
 import fetch from "isomorphic-unfetch";
@@ -10,9 +8,8 @@ import Link from "next/link";
 import { Config } from "../config.js";
 import Article from './src/js/components/article';
 import { getFeed, handleFeed } from './src/js/components/newsFeed';
-import { navItems } from './src/js/components/nav-items';
 //import 'https://renderizr-assets.domainstatic.com.au/@domain-group/fe-co-allhomes-header/@domain-group_fe-co-allhomes-header_8.1.6_3.0.1_client-allhomes.css';
-
+import './src/css/index.css';
 
 class AllhomesNews extends React.Component {
   constructor(props) {
@@ -42,14 +39,11 @@ class AllhomesNews extends React.Component {
             articleList: handleFeed(results),
             fullList: results,
           })
-          console.log(results);
         })
         .catch(err => console.log('Error with Feed', err))
     });
 
   }
-
-
 
     static async getInitialProps(context) {
         const pageRes = await fetch(
@@ -100,7 +94,6 @@ class AllhomesNews extends React.Component {
         render() {
           return (
               <Layout>
-                <AllhomesHeader {...navItems()} />
                 <header className="App-header">
                   <h1 className="App-title">Allhomes</h1>
                 </header>

@@ -1,72 +1,75 @@
 {
-    "name": "frontend",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "dev": "node server.js",
-      "build": "next build",
-      "start": "next start",
-      "test": "fe-build test",
-      "test:unit": "fe-build test:unit",
-      "scss": "node-sass --watch pages/src/scss -o pages/src/css",
-      "coverage": "fe-build test:coverage",
-      "lint": "fe-build test:lint",
-      "flow": "fe-build test:flow:start | flow-result-checker",
-      "flow-stop": "fe-build test:flow:stop",
-      "tdd": "fe-build test:unit:watch",
-      "build:local": "fe-build build:dev",
-      "build:module": "fe-build build:dist",
-      "watch": "fe-build watch",
-      "prepublish": "not-in-install && yarn run build:module || in-install",
-      "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md",
-      "postinstall": "yarn-bin-fix > /dev/null 2>&1 || (exit 0)",
-      "docker:build": "docker build -t frontend .",
-      "docker:clean": "docker rm -f frontend || true",
-      "docker:run": "docker run -p 3000:3000 --name frontend frontend",
-      "docker:stop": "docker stop frontend",
-      "docker:start": "docker start frontend && yarn run docker:logs",
-      "docker:logs": "docker logs -f frontend",
-      "deploy":
-        "yarn run docker:build && yarn run docker:clean && yarn run docker:run"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "express": "^4.16.2",
-      "isomorphic-unfetch": "^2.0.0",
-      "next": "^3.2.2",
-      "react": "^15.6.1",
-      "react-dom": "^15.6.1",
-      "@domain-group/fe-brary": "^19.1.3",
-      "@domain-group/fe-helper": "^5.0.1",
-      "@domain-group/fe-co-demo": "^3.5.0",
-      "@domain-group/fe-co-theme": "^1.3.2",
-      "@domain-group/fe-co-allhomes-header": "^8.1.6",
-      "@domain-group/fe-co-allhomes-footer": "^3.0.3",
-      "prop-types": "^15.5.10",
-      "node-sass": "^4.7.2",
-      "yarn-bin-fix": "^0.1.15"
-    },
-    "devDependencies": {
-      "@domain-group/fe-build": "^12.1.0",
-      "@domain-group/eslint-config-domain": "^4.0.1",
-      "@domain-group/nyc-config-domain": "1.0.0",
-      "@domain-group/remark-preset-domain": "^2.0.0",
-      "depd": "^1.1.0",
-      "flow-result-checker": "^0.1.1",
-      "in-publish": "^2.0.0"
-    },
-    "eslintConfig": {
-      "extends": [
-        "@domain-group/eslint-config-domain/browser",
-        "@domain-group/eslint-config-domain/flow"
-      ]
-    },
-    "remarkConfig": {
-      "plugins": [
-        "@domain-group/remark-preset-domain"
-      ]
-    }
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "next start",
+    "test": "fe-build test",
+    "test:unit": "fe-build test:unit",
+    "scss": "node-sass --watch pages/src/scss -o pages/src/css",
+    "coverage": "fe-build test:coverage",
+    "lint": "fe-build test:lint",
+    "flow": "fe-build test:flow:start | flow-result-checker",
+    "flow-stop": "fe-build test:flow:stop",
+    "tdd": "fe-build test:unit:watch",
+    "build:local": "fe-build build:dev",
+    "build:module": "fe-build build:dist",
+    "eject": "react-scripts eject",
+    "watch": "fe-build watch",
+    "prepublish": "not-in-install && yarn run build:module || in-install",
+    "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md",
+    "postinstall": "yarn-bin-fix > /dev/null 2>&1 || (exit 0)",
+    "docker:build": "docker build -t frontend .",
+    "docker:clean": "docker rm -f frontend || true",
+    "docker:run": "docker run -p 3000:3000 --name frontend frontend",
+    "docker:stop": "docker stop frontend",
+    "docker:start": "docker start frontend && yarn run docker:logs",
+    "docker:logs": "docker logs -f frontend",
+    "deploy": "yarn run docker:build && yarn run docker:clean && yarn run docker:run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@domain-group/fe-brary": "^19.1.3",
+    "@domain-group/fe-co-allhomes-footer": "^3.0.3",
+    "@domain-group/fe-co-allhomes-header": "^8.1.6",
+    "@domain-group/fe-co-demo": "^3.5.0",
+    "@domain-group/fe-co-theme": "^1.3.2",
+    "@domain-group/fe-helper": "^5.0.1",
+    "babel-preset-es2015": "^6.24.1",
+    "express": "^4.16.2",
+    "isomorphic-unfetch": "^2.0.0",
+    "next": "^3.2.2",
+    "node-sass": "^4.7.2",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.17",
+    "yarn-bin-fix": "^0.1.15"
+  },
+  "devDependencies": {
+    "@domain-group/eslint-config-domain": "^4.0.1",
+    "@domain-group/fe-build": "^12.1.0",
+    "@domain-group/nyc-config-domain": "1.0.0",
+    "@domain-group/remark-preset-domain": "^2.0.0",
+    "depd": "^1.1.0",
+    "flow-result-checker": "^0.1.1",
+    "in-publish": "^2.0.0",
+    "sass-loader": "^6.0.6"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@domain-group/eslint-config-domain/browser",
+      "@domain-group/eslint-config-domain/flow"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "@domain-group/remark-preset-domain"
+    ]
+  }
 }
