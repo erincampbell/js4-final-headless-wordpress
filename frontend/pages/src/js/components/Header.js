@@ -28,6 +28,12 @@ class Header extends Component {
               margin: 0;
               padding: 0;
             }
+
+            ul {
+              margin: inherit;
+              padding: 0;
+              list-style: none;
+            }
           `}</style>
         </div>
       );

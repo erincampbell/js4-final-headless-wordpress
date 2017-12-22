@@ -118,14 +118,8 @@ class AllhomesNews extends React.Component {
                       width: 66%;
                       display: inline-block;
                     }
-
-                    .article-list {
-                      width: 60%;
-                      font-family: "Source Sans Pro", sans-serif;
-                      color: #515b6e;
-                    }
                   `}</style>
-                  
+
                 </div>
 
                 <RightCol />

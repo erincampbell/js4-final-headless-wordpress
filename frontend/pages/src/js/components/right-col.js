@@ -8,6 +8,7 @@ class RightCol extends Component {
 
     return (
       <div className="secondary">
+        <h3>Wordpress Page Menu, just for fun/testing</h3>
         <Menu />
 
         <style jsx>{`

@@ -43,6 +43,7 @@ class Article extends React.Component {
 
           .entry-body {
             float:left;
+            width: calc(100% - 175px);
           }
 
           .entry-meta {
