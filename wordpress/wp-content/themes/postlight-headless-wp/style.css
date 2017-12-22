@@ -3,5 +3,37 @@ Theme Name: Postlight Headless WordPress
 Theme URI: https://github.com/postlight/headless-wp-starter
 Author: Postlight
 Author URI: https://postlight.com
-Description: 
+Description:
 */
+.article-list .entry-thumbnail {
+  display: block;
+  position: relative;
+  float: left;
+  width: 150px;
+  height: 100px;
+  margin: 0 15px 0 0;
+  overflow: hidden;
+  background: #d8dade; }
+
+.article-list .entry-body .entry-meta {
+  color: #979da7; }
+
+.article-list .entry-body .entry-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 5px 0; }
+
+.article-list .entry-body .cat-links {
+  display: inline-block;
+  margin-right: 5px; }
+  .article-list .entry-body .cat-links a {
+    padding: 3px 10px;
+    margin-bottom: 8px;
+    display: inline-block;
+    color: #3c475b;
+    background: #eaebed;
+    border-radius: 2px; }
+
+.content {
+  margin: 0 auto; }

@@ -1,16 +1,21 @@
 import Header from "./header";
 import Footer from "./footer";
 
-const layoutStyle = {
-    margin: 20,
-    padding: 20
-};
-
 const Layout = props => (
-    <div style={layoutStyle}>
+    <div className='page'>
         <Header />
-        {props.children}
+        <div className="page-contents">
+          {props.children}
+        </div>
         <Footer />
+
+        <style jsx>{`
+          .page-contents {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+          }
+        `}</style>
     </div>
 );
 

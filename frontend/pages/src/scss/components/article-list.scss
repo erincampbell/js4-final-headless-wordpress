@@ -12,11 +12,28 @@
 
   .entry-body {
     .entry-meta {
-
+      color: #979da7;
     }
 
-    .entry-header {
-      
+    .entry-title {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 24px;
+      margin: 5px 0;
+    }
+
+    .cat-links {
+      display: inline-block;
+      margin-right: 5px;
+
+      a {
+        padding: 3px 10px;
+        margin-bottom: 8px;
+        display: inline-block;
+        color: #3c475b;
+        background: #eaebed;
+        border-radius: 2px;
+      }
     }
 
   }

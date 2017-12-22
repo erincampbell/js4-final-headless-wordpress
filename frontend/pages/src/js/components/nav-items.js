@@ -224,13 +224,202 @@
       return fullArray;
     };
 
-/*
+
   export const allhomesFooter = {
       'homepageLink':'/',
-      'toolbarLinks':'test', //footerToolbarLinks,
-      'quickLinks': 'test2', //footerQuickLinks,
-      'copyrightInfo': [{
+      'toolbarLinks': {
+        navItems: [
+          {
+            href: "/ah/help",
+            text: "Help"
+          },
+          {
+            href: "/ah/info/contact-us/view",
+            text: "Contact"
+          },
+          {
+            href: "//domain.com.au/group/",
+            text: "About"
+          },
+          {
+            href: "/ah/mobile",
+            text: "Mobile"
+          },
+          {
+            href: "/ah/act/advertise",
+            text: "Place an ad"
+          }
+        ],
+        social: [
+          {
+            href: "//www.facebook.com/allhomes/",
+            icon: "facebook",
+            text: "Facebook"
+          },
+          {
+            href: "//www.twitter.com/allhomescomau/",
+            icon: "twitter",
+            text: "Twitter"
+          }
+        ]
+      },
+      'quickLinks': [
+        {
+          heading: "States",
+          items: [
+            {
+              href: "/ah/act/sale-residential",
+              text: "ACT"
+            },
+            {
+              href: "/ah/nsw/sale-residential",
+              text: "NSW"
+            },
+            {
+              href: "/ah/nt/sale-residential",
+              text: "Northern Territory"
+            },
+            {
+              href: "/ah/qld/sale-residential",
+              text: "Queensland"
+            },
+            {
+              href: "/ah/sa/sale-residential",
+              text: "South Australia"
+            },
+            {
+              href: "/ah/tas/sale-residential",
+              text: "Tasmania"
+            },
+            {
+              href: "/ah/vic/sale-residential",
+              text: "Victoria"
+            },
+            {
+              href: "/ah/wa/sale-residential",
+              text: "Western Australia"
+            }
+          ]
+        },
+        {
+          heading: "Capital Cities",
+          items: [
+            {
+              href: "/ah/act/sale-residential",
+              text: "Canberra real estate"
+            },
+            {
+              href: "/ah/nsw/sale-residential/inner-sydney/1027710",
+              text: "Sydney real estate"
+            },
+            {
+              href: "/ah/nt/sale-residential/darwin/1071110",
+              text: "Darwin real estate"
+            },
+            {
+              href: "/ah/nt/sale-residential/darwin/1071110",
+              text: "Darwin real estate"
+            },
+            {
+              href: "/ah/qld/sale-residential/inner-brisbane/1027510",
+              text: "Brisbane real estate"
+            },
+            {
+              href: "/ah/sa/sale-residential/eastern-adelaide/1023810",
+              text: "Adelaide real estate"
+            },
+            {
+              href: "/ah/tas/sale-residential/greater-hobart/1058710",
+              text: "Hobart real estate"
+            },
+            {
+              href: "/ah/vic/sale-residential/inner-melbourne/1027610",
+              text: "Melbourne real estate"
+            },
+            {
+              href: "/ah/wa/sale-residential/perth-and-western-suburbs/1072110",
+              text: "Perth real estate"
+            }
+          ]
+        },
+        {
+          heading: "Popular Areas",
+          items: [
+            {
+              href: "/ah/act/sale-residential/kingston/121488910",
+              text: "Kingston, ACT"
+            },
+            {
+              href: "/ah/act/sale-residential/belconnen/121477710",
+              text: "Belconnen, ACT"
+            },
+            {
+              href: "/ah/act/sale-residential/harrison/121474810",
+              text: "Harrison, ACT"
+            },
+            {
+              href: "/ah/act/sale-residential/deakin/121478810",
+              text: "Deakin, ACT"
+            },
+            {
+              href: "/ah/act/sale-residential/kambah/121477510",
+              text: "Kambah, ACT"
+            },
+            {
+              href: "/ah/act/sale-residential/yarralumla/121469210",
+              text: "Yarralumla, ACT"
+            },
+            {
+              href: "/ah/act/sale-residential/oconnor/121479210",
+              text: "O'Connor, ACT"
+            },
+            {
+              href: "/ah/act/sale-residential/kaleen/121471110",
+              text: "Kaleen, ACT"
+            }
+          ]
+        },
+        {
+          heading: "Allhomes",
+          items: [
+            {
+              href: "/ah/nsw/research/welcome/view",
+              text: "Past Sales Data"
+            },
+            {
+              href: "/ah/country/developments-residential",
+              text: "New Homes"
+            },
+            {
+              href: "/ah/act/agents",
+              text: "Find an Agent"
+            }
+          ]
+        },
+        {
+          heading: "More",
+          items: [
+            {
+              href: "//oneflare.com.au",
+              text: "Oneflare"
+            },
+            {
+              href: "/ah/ah0120",
+              text: "Privacy Policy"
+            },
+            {
+              href: "/ah/ah0011",
+              text: "Terms & Conditions"
+            },
+            {
+              href: "/ah/ah0130",
+              text: "Sitemap"
+            }
+          ]
+        }
+      ],
+      'copyrightInfo': {
         'domainGroupLink':'//www.domain.com.au/group/',
         'copyrightLink':'/ah/act/info/site-map/view'
-      }]
-    };*/
+      }
+    };
