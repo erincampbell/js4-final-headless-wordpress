@@ -4,12 +4,12 @@ It's a very basic version, with the intent to continue building on and progressi
 
 ## WordPress Backend
 The Wordpress backend is available after running `yarn start` in the root folder:
-* The WordPress REST API is available at [http://localhost:8080](http://localhost:8080)
-* The WordPress admin is at [http://localhost:8080/wp-admin/](http://localhost:8080/wp-admin/) default login credentials `nedstark` / `winteriscoming`
+* The WordPress admin is at [http://localhost:8080/wp-admin/](http://localhost:8080/wp-admin/) default login credentials `js4` / `finalAssignment!`
 
 ### Run the app (frontend)
 
-cd into the frontend folder and run `yarn build` after running `yarn` to install all dependencies
+* cd into the frontend folder and run `yarn build` after running `yarn` to install all dependencies
+* run `yarn start` to run page
 
 ### Import Data
 
@@ -22,7 +22,8 @@ The news feed comes from domain.com.au/news via the API:
 
 ### Next Steps
 
-* Get images in feed
+* Wordpress page and posts re-routing correctly
+* Images in feed
 * Get categories working
 * Find best way to build with CSS
 * Then fix up and improve CSS
