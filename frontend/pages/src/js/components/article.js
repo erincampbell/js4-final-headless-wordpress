@@ -9,7 +9,11 @@ class Article extends React.Component {
     const listTerms = typeof this.props.tags === 'string' ? this.props.tags : this.props.tags.map(tag => tag.name);
     return (
       <article key={this.props.id}>
-        <div className="entry-thumbnail"><img src={this.props.image} /></div>
+        <div className="entry-thumbnail"
+          dangerouslySetInnerHTML={{
+            __html: this.props.image
+          }}
+          ></div>
         <div className="entry-body">
         <div className="entry-meta">
           <span>Allison Worrall</span> | <span>8 hours ago</span>

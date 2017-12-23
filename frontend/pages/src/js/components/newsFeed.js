@@ -9,8 +9,9 @@ export const getFeed = () => {
 export const handleFeed = (newsFeed) => {
   const resultArray = [];
   newsFeed.map((result) => {
+    console.log(result);
     const terms = result.terms.category.length > 1 ? result.terms.category : result.terms.category[0].name;
-    const thumbnail = result.featured_image === null ? 'temp-article-image.jpg' : result.featured_image.guid;
+    const thumbnail = result.featured_image === null ? '' : result.featured_image.content;
     return resultArray.push({
       id: result.ID,
       title: result.title,
