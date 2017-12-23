@@ -1,17 +1,36 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Layout from './src/js/components/layout';
 import { themeVariables } from '@domain-group/fe-brary';
 import { themeRoot }  from '@domain-group/fe-co-theme';
 import fetch from "isomorphic-unfetch";
 import Link from "next/link";
 import { Config } from "../config.js";
+import Layout from './src/js/components/layout';
 import Article from './src/js/components/article';
-import { getFeed, handleFeed } from './src/js/components/newsFeed';
 import RightCol from './src/js/components/right-col';
+import RelatedPosts from './related-posts';
+import { getFeed, handleFeed } from './src/js/components/newsFeed';
 
 class AllhomesNews extends Component {
-  constructor(props, context) {
+
+  static async getInitialProps(context) {
+    const pageRes = await fetch(
+      `${Config.apiUrl}/wp-json/postlight/v1/page?slug=allhomes-page-content`
+    );
+    const page = await pageRes.json();
+    const postsRes = await fetch(
+      `${Config.apiUrl}/wp-json/wp/v2/posts?_embed`
+    );
+    const posts = await postsRes.json();
+    const pagesRes = await fetch(
+      `${Config.apiUrl}/wp-json/wp/v2/pages?_embed`
+    );
+    const pages = await pagesRes.json();
+    console.log(page);
+    return { page, posts, pages };
+  }
+
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -43,24 +62,8 @@ class AllhomesNews extends Component {
     });
   }
 
-  static async getInitialProps(context) {
-    const pageRes = await fetch(
-      `${Config.apiUrl}/wp-json/postlight/v1/page?slug=welcome`
-    );
-    const page = await pageRes.json();
-    const postsRes = await fetch(
-      `${Config.apiUrl}/wp-json/wp/v2/posts?_embed`
-    );
-    const posts = await postsRes.json();
-    const pagesRes = await fetch(
-      `${Config.apiUrl}/wp-json/wp/v2/pages?_embed`
-    );
-    const pages = await pagesRes.json();
-    return { page, posts, pages };
-  }
-
     render() {
-  /*    const posts = this.props.posts.map((post, index) => {
+      const posts = this.props.posts.map((post, index) => {
         return (
           <ul key={index}>
               <li>
@@ -87,7 +90,7 @@ class AllhomesNews extends Component {
             </li>
           </ul>
         );
-      }); */
+      });
 
       return (
           <Layout>
@@ -127,5 +130,4 @@ class AllhomesNews extends Component {
     }
 }
 
-export const BaseAllhomesNews = AllhomesNews;
-export default themeRoot(AllhomesNews, 'allhomes');
+export default AllhomesNews;
