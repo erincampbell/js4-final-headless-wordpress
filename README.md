@@ -22,7 +22,7 @@ The news feed comes from domain.com.au/news via the API:
 
 ### Next Steps
 
-* Wordpress page and posts re-routing correctly
+* Display feed posts on single page
 * Images in feed
 * Get categories working
 * Find best way to build with CSS
